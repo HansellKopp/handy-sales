@@ -1,0 +1,6 @@
+export default [
+  {
+    "rif": "J310037221",
+    "name": "Comercial Padre e Hijo"
+  }
+]
