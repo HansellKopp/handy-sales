@@ -1,24 +1,26 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { BrowserRouter as Router } from 'react-router-dom'
-// import './index.scss'
-import App from './containers/App/index.js'
-import registerServiceWorker from './registerServiceWorker'
-import 'typeface-roboto/index.css'
-import seed  from './model/seeders'
-import { reducer } from './reducer'
-import { StateProvider } from './state'
-import { initialState } from './reducer/initialState'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './assets/main.css'
+import App from 'containers/App';
+// import registerServiceWorker from './registerServiceWorker'
+import store from 'store/store'
+import { Provider } from 'react-redux';
+import { getData } from 'store/slices/stateSlice'
 
-seed()
+store.dispatch(getData())
 
-const Main = () => 
-    <Router>
-      <StateProvider initialState={initialState} reducer={reducer}>
+ReactDOM.render(
+  <React.StrictMode>
+      <Provider store={store}>
         <App />
-      </StateProvider >
-    </Router>
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
 
 
-ReactDOM.render(<Main />, document.getElementById('root'))
-registerServiceWorker()
+// registerServiceWorker()
