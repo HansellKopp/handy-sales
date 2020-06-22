@@ -14,6 +14,13 @@ export default () => {
     dispatch({ type: 'state/toogleShowCart' })
     dispatch({ type: 'state/toogleOpenDrawer' })
   }
+  const send = () => {
+    dispatch({ type: 'state/toogleOpenDrawer' })
+    dispatch({ type: 'state/showAlert', payload:
+      { message: 'Envio del pedido realizado con exito'}
+    })
+    dispatch({ type: 'cart/clear' })
+  }
   return (
   <div>
      <ListItem button>
@@ -26,7 +33,7 @@ export default () => {
       <ListItemIcon>
         <SendIcon />
       </ListItemIcon>
-      <ListItemText primary="Enviar pedido" />
+      <ListItemText primary="Enviar pedido" onClick={send} />
     </ListItem>
     <ListItem button>
       <ListItemIcon>

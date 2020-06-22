@@ -7,7 +7,8 @@ const useStyles = makeStyles((theme) => ({
       display: 'flex',
     },
     toolbar: {
-      paddingRight: 24, // keep right padding when drawer closed
+      paddingleft: 0, // keep right padding when drawer closed
+      paddingRight: 4, // keep right padding when drawer closed
     },
     toolbarIcon: {
       display: 'flex',
@@ -32,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
       }),
     },
     menuButton: {
-      marginRight: 10,
+      marginRight: 5,
     },
     menuButtonHidden: {
       display: 'none',
