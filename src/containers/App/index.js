@@ -23,6 +23,7 @@ import ExpandGroup from 'components/ExpandGroup'
 import { cartItems } from 'utils/cart'
 
 import useStyles from './styles'
+import SnackBar from 'components/SnackBar';
 
 export default function Dashboard() {
   const classes = useStyles();
@@ -38,6 +39,7 @@ export default function Dashboard() {
   return (
     <div className={classes.root}>
       <CssBaseline />
+      <SnackBar />
       <AppBar position="absolute" className={classNames(classes.appBar, openDrawer && classes.appBarShift)}>
         <Toolbar className={classes.toolbar}>
           <IconButton
