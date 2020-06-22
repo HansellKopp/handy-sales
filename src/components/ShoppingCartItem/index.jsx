@@ -26,7 +26,7 @@ export default ( { product }) => {
                 <ListItemIcon style={{ minWidth: 'auto'}}>
                     <AddIcon  onClick={add} />
                 </ListItemIcon>
-                <span className="quantity">{2}</span>
+                <span className="quantity">{product.quantity}</span>
                 <ListItemIcon style={{ minWidth: 'auto'}}>
                     <RemoveIcon onClick={remove} />
                 </ListItemIcon>
