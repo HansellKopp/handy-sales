@@ -1,9 +1,11 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
 import ShoppingCartItem from 'components/ShoppingCartItem'
 
 import { useStyles } from './style'
+import ShoppingCartTotal from 'components/ShoppingCartTotal';
 
 export default () => {
     const classes = useStyles();
@@ -15,6 +17,8 @@ export default () => {
                 {products.map((product, key) => 
                     <ShoppingCartItem key={key} product={product} /> 
                 )}
+                <Divider light />
+                <ShoppingCartTotal />
             </List>
       </div>)
 }
