@@ -62,4 +62,10 @@ export const reducers = {
     }
     return {...state, alert: {...alert}, showSnackbar: true }
   },
+
+  selectGroup: ( state, action ) => {
+    const cart = {...state}
+    cart.selectedGroup = action.payload
+    return cart
+  },
 }

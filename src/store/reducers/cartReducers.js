@@ -1,6 +1,5 @@
 export const initialState = {
         products: [],
-        selectedGroup: null,
         show: false,
 }
 
@@ -36,12 +35,6 @@ export const reducers = {
         })
 
         return {...state, products: newProducts.filter(s=> s.quantity>0)}
-    },
-
-    selectGroup: ( state, action ) => {
-        const cart = {...state}
-        cart.selectedGroup = action.payload
-        return cart
     },
 
     clear: (state, action) => (initialState)

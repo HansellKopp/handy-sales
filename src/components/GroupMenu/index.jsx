@@ -12,8 +12,8 @@ export default () => {
   const classes = useStyles()
   const dispatch = useDispatch()
   const [anchorEl, setAnchorEl] = React.useState(null)  
-  const options = useSelector(state => state.state.tokens)
-  const selectedGroup = useSelector(state => state.cart.selectedGroup)
+  const options = useSelector(state => state.state.departaments)
+  const selectedGroup = useSelector(state => state.state.selectedGroup) 
 
   const handleClickListItem = (event) => {
     setAnchorEl(event.currentTarget)
@@ -21,7 +21,7 @@ export default () => {
 
   const handleMenuItemClick = (event, option) => {
     setAnchorEl(null)
-    dispatch({ type: 'cart/selectGroup', payload: option })
+    dispatch({ type: 'state/selectGroup', payload: option })
   }
 
   const handleClose = () => {
@@ -38,7 +38,7 @@ export default () => {
           aria-label="Filtrar por "
           onClick={handleClickListItem}
         >
-          <ListItemText primary="Grupo" secondary={selectedGroup || options[0]} />
+          <ListItemText primary="Grupo" secondary={selectedGroup || options[0].departament} />
         </ListItem>
       </List>
       <Menu
@@ -48,13 +48,13 @@ export default () => {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        {options.map((option, index) => (
+        {options.map((option, key) => (
           <MenuItem
-            key={option}
-            selected={option === selectedGroup}
-            onClick={(event) => handleMenuItemClick(event, option)}
+            key={key}
+            selected={option.departament === selectedGroup.departament}
+            onClick={(event) => handleMenuItemClick(event, option.departament)}
           >
-            {option}
+            {option.departament}
           </MenuItem>
         ))}
       </Menu>
