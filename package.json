@@ -50,7 +50,7 @@
     "@fullhuman/postcss-purgecss": "^2.2.0",
     "@types/lodash": "^4.14.141",
     "autoprefixer": "^9.8.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "postcss-cli": "^7.1.1",
     "tailwindcss": "^1.4.6"
   }
